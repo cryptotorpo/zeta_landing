@@ -1,0 +1,141 @@
+
+        import * as React from "react"
+        import * as ReactDOM from "react-dom/client"
+        import * as Framer from "framer"
+
+        const routes = {WLRYn8dTB: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/yOUP0WpAXAJMylkvReKH/fA3poTgEai2qnWxSC2uH/WLRYn8dTB.js")), path: "/"}, SGbFyC3Ep: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/FfncYTUqYi1LUrdZ1bQc/Urv104C8AtihBxmjfvP4/SGbFyC3Ep.js")), path: "/linear-blockchain"}, vU2KsVDLA: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/XtGdYlUJB3jm8a6yMhpu/haSB9rbZxVgwsJfJyCC5/vU2KsVDLA.js")), path: "/linear-trading"}, aqGRo9NDw: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/81vAg0HJDREaaTmmwExo/1Kso3nb276E2Rmn1kuAa/aqGRo9NDw.js")), path: "/linear-updates"}, n4k30ULml: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/9qDsSOmOcGs3hoerCV90/BVepNZsUJILUpZ6ZkFg8/n4k30ULml.js")), path: "/grid-home"}, T9sgFNBQ2: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/DniIbACSLuKcGGJfh2RO/8BnMqPpj2oIMW5pIWBCi/T9sgFNBQ2.js")), path: "/grid-blockchain"}, qSQNPDSAC: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/L9aRTiewoVWwZFn5zLsT/iijEk6fHLoWaLEa0SJEF/qSQNPDSAC.js")), path: "/grid-trading"}, fSs6HHu1s: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/O5Su4rM4gdfUnQFBD7du/k9LXbaMqK1fGDyc7k06n/fSs6HHu1s.js")), path: "/grid-updates"}, ZXpTjMmtL: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/xAzT74dvlZ9dIWhbyMIB/QiihMSjd06yy18hrMNBm/ZXpTjMmtL.js")), path: "/masonry"}, fZmAFZhNM: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/mTQIDB0d7OM1hi45xZhm/K1zX5v3KGYRhqL1xTJ44/fZmAFZhNM.js")), path: "/about"}, WMZZJiNIc: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/a8PzJbs9LCZ8ksIObAhn/wEULOI4PwNqDdSBz9gq6/WMZZJiNIc.js")), path: "/contact"}, Z1_klP1h0: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/jlkuexm9QHECtU28CBL6/kswkkdkYV72oIWMKrHPX/Z1_klP1h0.js")), path: "/styles"}, augiA20Il: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/yxMiKwDcuPediju188R9/DYzOxEvrcdbhOqyD7C4f/augiA20Il.js")), path: "/old-home"}, yGSb13WE7: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/pcV3jOFDOCgtTvmN8wAY/VmBIqPLh4rRzGoQYc5uG/yGSb13WE7.js")), path: "/Home-light"}, GHQxnu9JJ: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/SKzfGrsj1MJZ9DqeDSf7/o4H8FPCPwTlUqp0obljo/GHQxnu9JJ.js")), path: "/page"}, qiA3JHonw: {collectionId: "Z3lbVKWCc", elements: {wSGeQ_HaR: "post"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/aEZpNpuxAYEeqnw8pmuz/dtpwwmFVSMUs9QNv7Prk/qiA3JHonw.js")), path: "/blog/:qxqfzpV3b"}, CK0bGh7d8: {collectionId: "hhkbDqDRb", elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/sRbppUaxiXWJYm566oTp/zwNSnRLNvcXw7zokK0M1/CK0bGh7d8.js")), path: "/authors/:Hybhwg5_M"}, OR7CqnVq7: {page: Framer.lazy(() => import("https://framerusercontent.com/modules/aZfaLryOUmqzDzN4tHC6/qb3XGdbTN4lrXOke2Pil/OR7CqnVq7.js"))}, aFp8OsaH0: {page: Framer.lazy(() => import("https://framerusercontent.com/modules/H9G44RXuLx6LxWCZwLK3/5LoXMS9Pz76IUXi3rcy8/aFp8OsaH0.js"))}}
+        const locales = [{code: "en-US", id: "default", name: "English", slug: ""}]
+
+        export async function getPageRoot({ routeId, pathVariables, localeId }) {
+            // We don't want the initial render to immediately have to suspend.
+            await routes[routeId].page.preload()
+
+            const content = React.createElement(
+                Framer.PageRoot,
+                {
+                    isWebsite: true,
+                    routeId,
+                    pathVariables,
+                    routes,
+                    collectionUtils: {hhkbDqDRb: async () => (await import("https://framerusercontent.com/modules/VJw30E42SyjI3EuNA49N/CWfbWzyFvtQrKEc2ad8j/hhkbDqDRb.js"))?.["utils"], Z3lbVKWCc: async () => (await import("https://framerusercontent.com/modules/cB5GgAT8lxmGilQugQtZ/AuBa1mRbTRrZMh11lbYV/Z3lbVKWCc.js"))?.["utils"]},
+                    framerSiteId: "aed96784a000dd9fab478abfa75bf35cbf6454c2a1689fc27ca500ef07986824",
+                    notFoundPage: Framer.lazy(() => import("__framer-not-found-page")),
+                    isReducedMotion: undefined,
+                    localeId,
+                    locales,
+                    preserveQueryParams: undefined,
+                }
+            )
+
+            const contentWithFeaturesContext = React.createElement(
+                Framer.LibraryFeaturesProvider,
+                {
+                    children: content,
+                    value: {enableAsyncURLUpdates: true, replaceNestedLinks: true, useGranularSuspense: true, wrapUpdatesInTransitions: false}
+                }
+            )
+
+            
+            const page = React.createElement(Framer.PageEffectsProvider, {
+                children: contentWithFeaturesContext,
+                value: {routes: {}}
+            })
+
+            return page
+        }
+
+        const isBrowser = typeof document !== "undefined"
+        if (isBrowser) {
+            window.__framer_importFromPackage = (packageAndFilename, exportIdentifier) => () => {
+                return React.createElement(Framer.ErrorPlaceholder, { error: 'Package component not supported: "' + exportIdentifier + '" in "' + packageAndFilename + '"' })
+            }
+
+            // A lot of libraries assume process.env.NODE_ENV is present in runtime/buildtime, so we are polyfilling it
+            window.process = {
+                ...window.process,
+                env: {
+                    ...(window.process ? window.process.env: undefined),
+                    NODE_ENV: "production"
+                }
+            }
+
+            window.__framer_events = window.__framer_events || []
+
+            // Fallback support for stack gaps
+            Framer.installFlexboxGapWorkaroundIfNeeded()
+
+            const container = document.getElementById("main")
+            // We know that #main is parsed before this script, so we don't need to wait for DOMContentLoaded or similar events.
+            if ("framerHydrateV2" in container.dataset) main(true, container)
+            else main(false, container)
+        }
+
+        function track() {
+            if (!isBrowser) return
+            window.__framer_events.push(arguments)
+        }
+
+        async function main(shouldHydrate, container) {
+            try {
+                let routeId, localeId, pathVariables, breakpoints
+                if (shouldHydrate) {
+                    const routeData = JSON.parse(container.dataset.framerHydrateV2)
+                    routeId = routeData.routeId
+                    localeId = routeData.localeId
+                    pathVariables = routeData.pathVariables
+                    breakpoints = routeData.breakpoints
+                } else {
+                    const routeData = Framer.inferInitialRouteFromPath(routes, decodeURIComponent(location.pathname), true, locales)
+                    routeId = routeData.routeId
+                    localeId = routeData.localeId
+                    pathVariables = routeData.pathVariables
+                }
+
+                const page = await getPageRoot({ routeId, localeId, pathVariables })
+
+                function handleRecoverableError(error, errorInfo) {
+                    const componentStack = errorInfo?.componentStack
+                    console.warn("Recoverable error during hydration. Please check any custom code or code overrides to fix server/client mismatches.", error, componentStack)
+                    // we only want to collect 1%, because this can be quite noisy (floods the data pipeline)
+                    if (Math.random() > 0.01) return
+                    track("published_site_load_recoverable_error", {
+                        message: String(error),
+                        componentStack, // componentStack is more useful
+                        stack: componentStack ? undefined : error instanceof Error && typeof error.stack === "string" ? error.stack : null,
+                    })
+                }
+
+                if (shouldHydrate) {
+                    
+
+                    Framer.withPerformanceMarks("framer-rewrite-breakpoints", () => {
+                        Framer.removeHiddenBreakpointLayersV2(breakpoints)
+                        window.__framer_onRewriteBreakpoints?.(breakpoints)
+                    })
+
+                    
+
+                    const startTransition = React.startTransition
+                    startTransition(() => {
+                        Framer.markHydrationStart()
+                        Framer.setInitialHydrationState()
+                        if (true) Framer.turnOffReactEventHandling()
+                        ReactDOM.hydrateRoot(container, page, { onRecoverableError: handleRecoverableError })
+                    })
+                } else {
+                    
+                    ReactDOM.createRoot(container, { onRecoverableError: handleRecoverableError }).render(page)
+                }
+            } catch (error) {
+                track("published_site_load_error", {
+                    message: String(error),
+                    stack: error instanceof Error && typeof error.stack === "string" ? error.stack : null
+                })
+                throw error
+            }
+        }
+
+        
+
+        
+    

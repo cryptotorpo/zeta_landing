@@ -1,0 +1,41 @@
+@import url('./base.css');
+
+:root:not(.theme-dark) {
+  --black: #141626;
+  --primary: #7a4eb2;
+  --bkg-light: rgba(255, 255, 255, 0.1);
+  --bkg-dark: rgba(0, 0, 0, 0.1);
+  --bkg-darker: rgba(0, 0, 0, 0.2);
+  --bkg-darkest: rgba(0, 0, 0, 0.4);
+  --text: #7a4eb2;
+  --tv-color-platform-background: transparent;
+  --tv-color-pane-background: transparent;
+  --tv-color-pane-background-secondary: var(--bkg-dark);
+  --tv-color-toolbar-button-text: var(--text);
+  --tv-color-toolbar-button-background-hover: transparent;
+  --tv-color-toolbar-button-background-secondary-hover: var(--bkg-darker);
+  --tv-color-toolbar-button-background-expanded: var(--bkg-darkest);
+  --tv-color-toolbar-button-text: var(--text);
+  --tv-color-toolbar-button-text-hover: var(--primary);
+  --tv-color-toolbar-button-text-active: var(--primary);
+  --tv-color-toolbar-button-text-active-hover: var(--primary);
+  --tv-color-item-active-text: var(--text);
+  --tv-color-toolbar-toggle-button-background-active: var(--primary);
+  --tv-color-toolbar-toggle-button-background-active-hover: var(--primary);
+}
+
+:root {
+  /* Can you set these two values in the overrides somehow? */
+  --tv-color-platform-background: #140d22;
+  --tv-color-pane-background: #140d22;
+  --tv-color-toolbar-button-text: #7a4eb2;
+  --tv-color-toolbar-divider-background: transparent;
+}
+
+html.theme-dark .chart-page .chart-container-border {
+  background-color: #140d22;
+}
+html.theme-dark .chart-container-border {
+  background-color: #140d22;
+}
+

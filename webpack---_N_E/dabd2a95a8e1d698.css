@@ -1,0 +1,27 @@
+@font-face {
+font-family: '__colrv1Font_717a88';
+src: url(/_next/static/media/78f8543d3770f084-s.woff2) format('woff2');
+font-display: swap;
+}@font-face {font-family: '__colrv1Font_Fallback_717a88';src: local("Arial");ascent-override: 83.01%;descent-override: 14.65%;line-gap-override: 0.00%;size-adjust: 100.00%
+}.__className_717a88 {font-family: '__colrv1Font_717a88', '__colrv1Font_Fallback_717a88'
+}.__variable_717a88 {--font-emojis-colrv1: '__colrv1Font_717a88', '__colrv1Font_Fallback_717a88'
+}
+
+@font-face {
+font-family: '__sbixFont_fb9b32';
+src: url(/_next/static/media/db34f4a327652380-s.woff2) format('woff2');
+font-display: swap;
+}@font-face {font-family: '__sbixFont_Fallback_fb9b32';src: local("Arial");ascent-override: 83.01%;descent-override: 14.65%;line-gap-override: 0.00%;size-adjust: 100.00%
+}.__className_fb9b32 {font-family: '__sbixFont_fb9b32', '__sbixFont_Fallback_fb9b32'
+}.__variable_fb9b32 {--font-emojis-sbix: '__sbixFont_fb9b32', '__sbixFont_Fallback_fb9b32'
+}
+
+@font-face {
+font-family: '__cbdtFont_9b75a4';
+src: url(/_next/static/media/4cdb2f57a1cf1dd4-s.woff2) format('woff2');
+font-display: swap;
+}@font-face {font-family: '__cbdtFont_Fallback_9b75a4';src: local("Arial");ascent-override: 83.01%;descent-override: 14.65%;line-gap-override: 0.00%;size-adjust: 100.00%
+}.__className_9b75a4 {font-family: '__cbdtFont_9b75a4', '__cbdtFont_Fallback_9b75a4'
+}.__variable_9b75a4 {--font-emojis-cbdt: '__cbdtFont_9b75a4', '__cbdtFont_Fallback_9b75a4'
+}
+

@@ -1,0 +1,14 @@
+@import url("./base.css");
+
+:root {
+  /* Can you set these two values in the overrides somehow? */
+  --tv-color-platform-background: #090012;
+  --tv-color-pane-background: #090012;
+  --tv-color-toolbar-button-text: #7a4eb2;
+  --tv-color-toolbar-divider-background: transparent;
+}
+
+/* axis font size */
+[class*="logoAndTitlesWrapper-"] {
+  font-size: 11px !important;
+}

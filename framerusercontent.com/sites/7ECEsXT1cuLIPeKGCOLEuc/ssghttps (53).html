@@ -1,0 +1,77 @@
+import{jsx as _jsx}from"react/jsx-runtime";import*as React from"react";import{createStore}from"https://framer.com/m/framer/store.js@^1.0.0";const useStore=createStore({background:"#f0f0f0"});export function TableOverride(Component){return props=>{const[store]=useStore();const extractAndFormatTable=React.useCallback(()=>{const contentDivs=document.querySelectorAll('[data-framer-name="Content"][data-framer-component-type="RichTextContainer"]');contentDivs.forEach(contentDiv=>{const codeBlocks=contentDiv.querySelectorAll(".framer-text.framer-text-module");codeBlocks.forEach(codeBlock=>{if(codeBlock instanceof HTMLElement){// Get the framer-cb div to access CSS variables
+const framerCbDiv=codeBlock.querySelector(".framer-cb");if(!framerCbDiv)return;// Extract CSS variables from the style attribute
+const styleAttr=framerCbDiv.getAttribute("style")||"";const cssVars={};styleAttr.split(";").forEach(pair=>{const[key,value]=pair.split(":").map(s=>s.trim());if(key.startsWith("--")){cssVars[key]=value;}});// Determine if we're in light or dark mode
+const colorScheme=cssVars["--cb-color-scheme-dark"]==="light"?"light":"dark";// Find the div with the border (sp-layout)
+const borderDiv=codeBlock.querySelector(".sp-layout");if(!borderDiv)return;// Extract the border properties and padding from the style attribute
+const borderStyle=window.getComputedStyle(borderDiv);const borderWidth=borderStyle.borderWidth;const borderColor=borderStyle.borderColor;const borderRadius=borderStyle.borderRadius;const padding=borderStyle.getPropertyValue("--cb-padding")||"27px"// Default to 27px if not set
+;// Create an outer container for the border
+const outerContainer=document.createElement("div");outerContainer.style.cssText=`
+                            border: ${borderWidth} solid ${borderColor};
+                            border-radius: ${borderRadius};
+                            overflow: hidden;
+                            width: 100%;
+                            height: 100%;
+                        `;// Create an inner container for the scrollable content
+const innerContainer=document.createElement("div");innerContainer.style.cssText=`
+                            overflow: auto;
+                            width: 100%;
+                            height: 100%;
+                        `;// Create the table
+const table=document.createElement("table");table.style.cssText=`
+                            border-collapse: separate;
+                            border-spacing: 0;
+                            width: 100%;
+                        `;// Convert extracted content to HTML table
+const codeContent=codeBlock.textContent||"";const tableLines=codeContent.split(/\r?\n/).filter(line=>line.trim()!=="");const tableHtml=tableLines.map((row,index)=>{const cells=row.split("|").map(cell=>cell.trim()).filter(cell=>cell!=="");if(index===0){return`<tr>${cells.map((cell,cellIndex)=>`<th${cellIndex===0?' class="first-column"':""}>${cell}</th>`).join("")}</tr>`;}else if(index===1){return""// Skip the separator row
+;}else{while(cells.length<4){cells.push("");}return`<tr>${cells.map((cell,cellIndex)=>`<td${cellIndex===0?' class="first-column"':""}>${cell.replace(/\<br\>/g,"<br>")}</td>`).join("")}</tr>`;}}).filter(row=>row!=="").join("");table.innerHTML=`
+                            <table style="width: 100%; border-collapse: separate; border-spacing: 0;">
+                                ${tableHtml}
+                            </table>
+                        `;// Add styles
+const style=document.createElement("style");style.textContent=`
+                            table th, table td {
+                                padding: ${padding};
+                                text-align: left;
+                                background-color: ${cssVars[`--cb-colors-surface1-${colorScheme}`]};
+                                
+                                border-bottom: 1px solid ${borderColor};
+                                color: #DDCBFF;
+                            }
+
+                            table th {
+                                font-weight: bold;
+                                color: #DDCBFF;
+                                position: sticky;
+                                top: 0;
+                                z-index: 1;
+                            }
+
+                            .first-column {
+                                font-weight: bold;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                            table tr:last-child td {
+                                border-bottom: none;
+                            }
+                            table th:last-child,
+                            table td:last-child {
+                                border-right: none;
+                            }
+                        `;outerContainer.appendChild(style);// Assemble the structure
+innerContainer.appendChild(table);outerContainer.appendChild(innerContainer);// Replace the content of the code block with the new structure
+codeBlock.innerHTML="";codeBlock.appendChild(outerContainer);}});});},[store.background]);React.useEffect(()=>{extractAndFormatTable();// Add a MutationObserver to handle dynamic content changes
+const observer=new MutationObserver(extractAndFormatTable);const contentDivs=document.querySelectorAll('[data-framer-name="Content"][data-framer-component-type="RichTextContainer"]');contentDivs.forEach(contentDiv=>{observer.observe(contentDiv,{childList:true,subtree:true});});// Remove white-space: pre-wrap from the Content div and set opacity to 1
+const style=document.createElement("style");style.textContent=`
+                [data-framer-name="Content"][data-framer-component-type="RichTextContainer"] {
+                    white-space: normal !important;
+                    opacity: 1 !important;
+                }
+                [data-framer-name="Content"][data-framer-component-type="RichTextContainer"] > div {
+                    white-space: normal !important;
+                    opacity: 1 !important;
+                }
+            `;document.head.appendChild(style);return()=>{observer.disconnect();document.head.removeChild(style);};},[extractAndFormatTable]);return /*#__PURE__*/_jsx(Component,{...props});};}
+export const __FramerMetadata__ = {"exports":{"TableOverride":{"type":"reactHoc","name":"TableOverride","annotations":{"framerContractVersion":"1"}},"__FramerMetadata__":{"type":"variable"}}}
+//# sourceMappingURL=./Table.map
