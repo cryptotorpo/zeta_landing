@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr"><head><base href="https://trade.zeta-ai.net/charting_library/"><meta charset="utf-8"><script>window===window.parent&&(location.href="about:blank")</script> 
+<!DOCTYPE html><html lang="en" dir="ltr"><head><base href="https://app.zetaai.pro/charting_library/"><meta charset="utf-8"><script>window===window.parent&&(location.href="about:blank")</script> 
 <script defer crossorigin="anonymous" src="bundles/runtime.73eaf5da31fa198fb54c.js"></script>
 <script defer crossorigin="anonymous" src="bundles/en.5008.e5d7d914577969582fa4.js"></script>
 <script defer crossorigin="anonymous" src="bundles/1564.5d23a32481002f127c65.js"></script>
